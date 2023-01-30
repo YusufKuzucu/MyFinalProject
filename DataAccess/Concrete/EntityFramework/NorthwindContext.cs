@@ -6,17 +6,19 @@ using System.Text;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    //context: Db tabloları ile proje claslarını bağlamak
+    //context: Db tabloları ile proje classlarını bağlamak
     public class NorthwindContext:DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=YUSUF_KUZUCU;DataBase=Northwind;Trusted_Connection=true");
+            optionsBuilder.UseSqlServer(@"Server=YUSUF_KUZUCU; Database=Northwind;Trusted_Connection=true");
         }
-
+        //hangi nesnem hangş nesneye karşılık gelicek
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<Order> Orders { get; set; }
+
 
     }
 }
