@@ -1,13 +1,11 @@
 ﻿using Castle.DynamicProxy;
-using Microsoft.EntityFrameworkCore.Diagnostics;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Core.Utilities.Interceptors
 {
-    public abstract partial class MethodInterception : MethodInterceptionBaseAttribute
+    public abstract class MethodInterception : MethodInterceptionBaseAttribute
     {
+        //invocation :  business method--bütün operasyonlar
         protected virtual void OnBefore(IInvocation invocation) { }
         protected virtual void OnAfter(IInvocation invocation) { }
         protected virtual void OnException(IInvocation invocation, System.Exception e) { }
